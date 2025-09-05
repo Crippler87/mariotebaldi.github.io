@@ -3,249 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Tebaldi - Product Manager Journey</title>
+    <title>Mario Tebaldi - Product Journey at Booking.com</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6;
+            background-color: #f8f9fa;
         }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -31px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 22px;
-            height: 22px;
-            border-radius: 50%;
-            background-color: #fff;
-            border: 4px solid #4f46e5;
+        .timeline-item {
+            border-left: 3px solid #003580;
         }
-        .timeline-line {
-            position: absolute;
-            left: -21px;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background-color: #e5e7eb;
-            z-index: -1;
+        .timeline-item:hover .timeline-dot {
+            transform: scale(1.5);
+            background-color: #0071c2;
         }
-        .modal-backdrop {
-            transition: opacity 0.3s ease;
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+        .modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
         }
         .modal-content {
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .skill-tag {
+            transition: all 0.2s ease;
+        }
+        .skill-tag:hover {
+            background-color: #003580;
+            color: white;
+            transform: translateY(-2px);
         }
     </style>
 </head>
 <body class="text-gray-800">
 
     <!-- Header -->
-    <header class="bg-white shadow-sm sticky top-0 z-20">
+    <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold text-gray-900">Mario Tebaldi</h1>
-                <p class="text-indigo-600 font-medium">My Career as a Product Roadmap</p>
+             <div class="flex items-center space-x-4">
+                <img src="data:image/jpeg;base64,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" alt="Mario Tebaldi" class="w-16 h-16 rounded-full border-2 border-white shadow-md">
+                <div>
+                    <h1 class="text-xl font-bold text-gray-900">Mario Tebaldi</h1>
+                    <p class="text-sm text-gray-600">Product Leadership Journey</p>
+                </div>
             </div>
-            <div class="flex items-center space-x-4 text-sm">
-                <a href="mailto:mario.tebaldi87@gmail.com" class="text-gray-600 hover:text-indigo-600">mario.tebaldi87@gmail.com</a>
-                <a href="https://www.linkedin.com/in/mario-tebaldi-1b1b3b1b3/" target="_blank" class="text-gray-600 hover:text-indigo-600">LinkedIn</a>
-            </div>
+            <a href="https://www.linkedin.com/in/mario-tebaldi-444385102" target="_blank" class="text-sm font-medium text-blue-600 hover:text-blue-800 transition">LinkedIn Profile &rarr;</a>
         </div>
     </header>
 
     <!-- Main Content -->
     <main class="container mx-auto p-6 md:p-12">
         <div class="max-w-4xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-4">The Journey to Product Leadership</h2>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">From understanding the user's core needs to leading complex financial operations and shaping product features, my career has been a journey of solving problems and delivering value. Here's my roadmap.</p>
 
-            <!-- Timeline -->
-            <div class="relative pl-8">
-                <div class="timeline-line"></div>
+            <!-- Intro Section -->
+            <section class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-900 mb-2">My Product Journey at Booking.com</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    From the front lines of customer service to leading strategic finance operations, my career at Booking.com has been a practical education in product management. I've progressed from identifying user pain points to building and scaling the solutions.
+                </p>
+            </section>
 
-                <!-- Section: Foundation -->
-                <div class="mb-12">
-                    <h3 class="text-xl font-semibold text-indigo-700 mb-4">Phase 1: Building a User-Centric Foundation (The MVP)</h3>
-                    <div class="space-y-8">
-                        <div class="relative timeline-item" onclick="openModal('modal1')">
-                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                                <p class="text-sm text-gray-500">2012 - 2016</p>
-                                <h4 class="font-bold text-lg">Feature Shipped: Deep User Empathy</h4>
-                                <p class="text-gray-600 mt-2">Started on the front lines, resolving thousands of customer issues and handling escalations. This built a deep, foundational understanding of user pain points and the operational impact of product decisions.</p>
-                                <div class="mt-4 flex flex-wrap gap-2">
-                                    <span class="bg-indigo-100 text-indigo-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Customer Support</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Problem Solving</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+            <!-- Skills Section -->
+            <section class="mb-16">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Core Product Competencies</h3>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <span class="skill-tag bg-blue-100 text-blue-800 px-4 py-2 rounded-full cursor-default">People Management & Coaching</span>
+                    <span class="skill-tag bg-blue-100 text-blue-800 px-4 py-2 rounded-full cursor-default">Product Collaboration</span>
+                    <span class="skill-tag bg-blue-100 text-blue-800 px-4 py-2 rounded-full cursor-default">Stakeholder Management</span>
+                    <span class="skill-tag bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-default">Data Analysis (SQL/Snowflake)</span>
+                    <span class="skill-tag bg-green-100 text-green-800 px-4 py-2 rounded-full cursor-default">Process Improvement</span>
+                    <span class="skill-tag bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full cursor-default">Problem Solving</span>
+                    <span class="skill-tag bg-yellow-100 text-yellow-800 px-4 py-2 rounded-full cursor-default">Solution-Oriented Delivery</span>
+                    <span class="skill-tag bg-red-100 text-red-800 px-4 py-2 rounded-full cursor-default">Compliance & Risk (SOx)</span>
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <div class="space-y-12">
+                <!-- Phase 3 -->
+                <div class="card bg-white p-6 rounded-lg shadow-sm border border-gray-200 cursor-pointer" onclick="openModal('modal3')">
+                    <p class="text-sm text-blue-600 font-semibold">Phase 3: Sep 2023 - Present</p>
+                    <h4 class="text-xl font-bold text-gray-900 mt-1">Strategy & Leadership: Owning the Product Ecosystem</h4>
+                    <p class="mt-2 text-gray-600">As Team Lead for Billing Finance, I now fully bridge the gap between operations and product. My role is to own a critical business area, drive the product strategy, and lead a high-performing team to translate operational needs into scalable, compliant, and efficient features.</p>
                 </div>
 
-                <!-- Section: Scaling -->
-                <div class="mb-12">
-                    <h3 class="text-xl font-semibold text-green-700 mb-4">Phase 2: Mastering Business Logic & Operations (Scaling)</h3>
-                    <div class="space-y-8">
-                        <div class="relative timeline-item" onclick="openModal('modal2')">
-                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                                <p class="text-sm text-gray-500">2016 - 2023</p>
-                                <h4 class="font-bold text-lg">Feature Shipped: Core Business Logic & Compliance</h4>
-                                <p class="text-gray-600 mt-2">Transitioned into finance operations, managing large-scale billing and credit control. Became a control owner for SOx compliance and began co-designing billing flows with Product and Tech teams.</p>
-                                <div class="mt-4 flex flex-wrap gap-2">
-                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Finance Operations</span>
-                                    <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Compliance (SOx)</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Data Analysis (SQL)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Phase 2 -->
+                <div class="card bg-white p-6 rounded-lg shadow-sm border border-gray-200 cursor-pointer" onclick="openModal('modal2')">
+                    <p class="text-sm text-blue-600 font-semibold">Phase 2: Mar 2016 - Sep 2023</p>
+                    <h4 class="text-xl font-bold text-gray-900 mt-1">Scaling: Building Financial & Risk Systems</h4>
+                    <p class="mt-2 text-gray-600">Transitioning into finance, I moved from individual user issues to systemic, high-volume problems. I applied data analysis to mitigate revenue risk, owned compliance controls, and collaborated directly with Product and Tech to co-design and test new billing flows and collection tools.</p>
                 </div>
 
-                <!-- Section: Product Leadership -->
-                <div class="mb-12">
-                     <h3 class="text-xl font-semibold text-purple-700 mb-4">Phase 3: Driving Product Strategy & Impact (Growth)</h3>
-                    <div class="space-y-8">
-                        <div class="relative timeline-item" onclick="openModal('modal3')">
-                            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-pointer">
-                                <p class="text-sm text-gray-500">2023 - Present</p>
-                                <h4 class="font-bold text-lg">Epic Launch: From Operations to Product Strategy</h4>
-                                <p class="text-gray-600 mt-2">As Team Lead, I bridged the gap between finance operations and product development. My key focus has been translating operational pain points into actionable product requirements and leading cross-functional teams to launch solutions.</p>
-                                <div class="mt-4 flex flex-wrap gap-2">
-                                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Product Collaboration</span>
-                                    <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Stakeholder Management</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">People Management</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                 <!-- Section: Future Roadmap -->
-                <div>
-                    <h3 class="text-xl font-semibold text-blue-700 mb-4">The Future Roadmap: What's Next?</h3>
-                    <div class="space-y-8">
-                        <div class="relative timeline-item">
-                            <div class="bg-white p-6 rounded-lg shadow-md">
-                                <p class="text-sm text-gray-500">2025 & Beyond</p>
-                                <h4 class="font-bold text-lg">Next Up: Your New Product Manager</h4>
-                                <p class="text-gray-600 mt-2">Currently completing 5x IBM Product Management certifications to formalize my practical experience. I'm ready to combine my deep operational knowledge and proven leadership skills to build, launch, and grow successful products.</p>
-                                <div class="mt-4 flex flex-wrap gap-2">
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Product Strategy</span>
-                                    <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Agile Development</span>
-                                    <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Ready to Build</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <!-- Phase 1 -->
+                <div class="card bg-white p-6 rounded-lg shadow-sm border border-gray-200 cursor-pointer" onclick="openModal('modal1')">
+                    <p class="text-sm text-blue-600 font-semibold">Phase 1: Sep 2012 - Feb 2016</p>
+                    <h4 class="text-xl font-bold text-gray-900 mt-1">Foundation: User Discovery & Problem Validation</h4>
+                    <p class="mt-2 text-gray-600">My journey began on the front lines in Customer Service. I gained deep user empathy by directly handling guest and partner issues, validating recurring problems, and designing initial process improvements for complex cases like chargebacks, fraud, and legal escalations.</p>
                 </div>
             </div>
+
+             <!-- Career Foundation Section -->
+            <section class="mt-20">
+                <h3 class="text-2xl font-semibold mb-6 text-gray-800 text-center">Career Foundation (2005-2012)</h3>
+                <p class="text-center text-gray-600 max-w-3xl mx-auto">Prior to Booking.com, I developed my core leadership and operational management skills in fast-paced retail and logistics environments. As an Outbound Team Leader, Operational Supervisor, and Sales Supervisor, I honed my abilities in team coaching, performance management, and process execution—skills that proved invaluable in my product-focused career.</p>
+            </section>
         </div>
     </main>
-    
-    <!-- Modal 1 -->
-    <div id="modal1" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center p-4 modal-backdrop" onclick="closeModal('modal1')">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-2xl modal-content transform scale-95" onclick="event.stopPropagation()">
-            <div class="p-6 border-b">
-                <h3 class="text-xl font-bold">Case Study: Building User Empathy</h3>
+
+    <!-- Modals -->
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transform scale-95">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl p-8 transform scale-100" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start">
+                 <div>
+                    <p class="text-sm text-blue-600 font-semibold">Phase 3: Team Lead, Billing Finance</p>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Key Achievements & Responsibilities</h2>
+                </div>
+                <button onclick="closeModal('modal3')" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
             </div>
-            <div class="p-6">
-                <p class="font-semibold text-gray-700">Role:</p>
-                <p class="mb-4">Customer Service Executive -> Senior Customer Service Executive</p>
-                <p class="font-semibold text-gray-700">Key Achievements:</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Resolved thousands of escalated complaints, including fraud/legal cases and executive-level issues.</li>
-                    <li>Designed a more efficient policy flow for chargeback claims, reducing turnaround time.</li>
-                    <li>Supervised a team of 15, handling performance coaching and leading development plans.</li>
-                    <li>Acted as the voice of the customer, participating in pilots for new processes to improve user experience.</li>
-                </ul>
-            </div>
-            <div class="p-4 bg-gray-50 text-right rounded-b-lg">
-                <button onclick="closeModal('modal1')" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Close</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Modal 2 -->
-    <div id="modal2" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center p-4 modal-backdrop" onclick="closeModal('modal2')">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-2xl modal-content transform scale-95" onclick="event.stopPropagation()">
-            <div class="p-6 border-b">
-                <h3 class="text-xl font-bold">Case Study: Mastering Core Business Logic</h3>
-            </div>
-            <div class="p-6">
-                <p class="font-semibold text-gray-700">Role:</p>
-                <p class="mb-4">Credit Controller -> Senior Billing Finance Specialist</p>
-                <p class="font-semibold text-gray-700">Key Achievements:</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Monitored and optimized global billing processes for over 12 million invoices per year.</li>
-                    <li>Used SQL/Hadoop to analyze data, detect discrepancies, and implement preventive actions to reduce revenue risk.</li>
-                    <li>Owned multiple SOx controls, partnering with Risk & Control to strengthen compliance.</li>
-                    <li>Co-designed new billing flows with Product and Tech teams, contributing requirements, test scenarios, and rollout support.</li>
-                </ul>
-            </div>
-            <div class="p-4 bg-gray-50 text-right rounded-b-lg">
-                <button onclick="closeModal('modal2')" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Close</button>
-            </div>
+            <ul class="mt-4 space-y-3 list-disc list-inside text-gray-700">
+                <li><b>Product Ownership:</b> Translated complex operational issues into clear product requirements and acceptance criteria for the engineering backlog.</li>
+                <li><b>Backlog Prioritization:</b> Collaborated with Product Managers and Engineering leads to co-prioritize the feature backlog based on business impact and operational urgency.</li>
+                <li><b>Rapid Product Delivery:</b> Designed and delivered an emergency €30M partner compensation solution in 3 days, coordinating 10+ teams across Tech, Product, Finance, and Legal.</li>
+                <li><b>Go-to-Market Leadership:</b> Led User Acceptance Testing (UAT), ensured launch readiness for new billing features, and tracked post-launch KPIs to drive iterative improvements.</li>
+                <li><b>Strategic Roadmapping:</b> Aligned team capacity and hiring plans with the product roadmap and business goals to ensure effective execution.</li>
+                <li><b>Cross-Functional Vision:</b> Proactively partnered with product communities to forecast the impact of new platform-wide launches on billing systems and compliance controls.</li>
+            </ul>
         </div>
     </div>
 
-    <!-- Modal 3 -->
-    <div id="modal3" class="fixed inset-0 bg-gray-900 bg-opacity-50 hidden flex items-center justify-center p-4 modal-backdrop" onclick="closeModal('modal3')">
-        <div class="bg-white rounded-lg shadow-2xl w-full max-w-2xl modal-content transform scale-95" onclick="event.stopPropagation()">
-            <div class="p-6 border-b">
-                <h3 class="text-xl font-bold">Case Study: Driving Product Impact</h3>
+    <!-- Modal 2 -->
+    <div id="modal2" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transform scale-95">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl p-8" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start">
+                <div>
+                    <p class="text-sm text-blue-600 font-semibold">Phase 2: Credit Controller & Senior Billing Specialist</p>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Key Achievements & Responsibilities</h2>
+                </div>
+                <button onclick="closeModal('modal2')" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
             </div>
-            <div class="p-6">
-                 <p class="font-semibold text-gray-700">Role:</p>
-                <p class="mb-4">Team Lead, Billing Finance</p>
-                <p class="font-semibold text-gray-700">Key Product-Led Achievements:</p>
-                <ul class="list-disc list-inside space-y-2 text-gray-600">
-                    <li><strong>Problem to Requirement:</strong> Translated complex operational issues into clear product requirements and acceptance criteria, co-prioritizing the backlog with Product & Engineering.</li>
-                    <li><strong>Cross-Functional Launch:</strong> Designed and executed an ad-hoc partner compensation flow for ~€30M in just 3 days, coordinating 10 teams across Tech, Product, Finance, Legal, and more.</li>
-                    <li><strong>Data-Driven Results:</strong> Raised billing accuracy to a world-class 99.97% through enhanced control design, defect triage, and preventive analytics.</li>
-                    <li><strong>Go-to-Market Leadership:</strong> Led User Acceptance Testing (UAT) and launch readiness for new features, then tracked post-launch KPIs to drive necessary iterations with stakeholders.</li>
-                </ul>
+            <ul class="mt-4 space-y-3 list-disc list-inside text-gray-700">
+                <li><b>Data-Driven Analysis:</b> Applied SQL and Hadoop to analyze global billing data, detecting trends and discrepancies to implement preventive actions and reduce revenue risk.</li>
+                <li><b>Technical Collaboration:</b> Co-designed new billing flows with stakeholders from Tech, Product, and Accounting, providing operational requirements and test scenarios.</li>
+                <li><b>Compliance & Risk Ownership:</b> Served as the control owner for multiple SOx and non-SOx controls, strengthening compliance through documentation and process refinement.</li>
+                <li><b>System Improvement:</b> Drove process improvements for collection and dispute tools (e.g., B.open 2.0, B.Suite legal process) to streamline operations.</li>
+                <li><b>Stakeholder Alignment:</b> Partnered with Partner Services to balance financial risk mitigation with partner satisfaction, ensuring business continuity.</li>
+                <li><b>Team Scaling:</b> Supported recruiting and coached new colleagues to ensure rapid onboarding and adherence to high-performance standards.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 1 -->
+    <div id="modal1" class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transform scale-95">
+        <div class="modal-content bg-white rounded-lg shadow-2xl w-full max-w-2xl p-8" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start">
+                 <div>
+                    <p class="text-sm text-blue-600 font-semibold">Phase 1: Customer Service & Relations Executive</p>
+                    <h2 class="text-2xl font-bold text-gray-900 mt-1">Key Achievements & Responsibilities</h2>
+                </div>
+                <button onclick="closeModal('modal1')" class="text-gray-500 hover:text-gray-800 text-3xl">&times;</button>
             </div>
-            <div class="p-4 bg-gray-50 text-right rounded-b-lg">
-                <button onclick="closeModal('modal3')" class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700">Close</button>
-            </div>
+            <ul class="mt-4 space-y-3 list-disc list-inside text-gray-700">
+                <li><b>Qualitative User Research:</b> Gained firsthand insight into user pain points by liaising between guests and accommodations, resolving complex escalations.</li>
+                <li><b>Problem Validation:</b> Identified and categorized recurring high-severity issues, including fraud, legal cases, and social media escalations.</li>
+                <li><b>Process Design (MVP):</b> Designed the initial policy flow for chargeback claims to reduce resolution turnaround time post-escalation.</li>
+                <li><b>Early-Stage Testing:</b> Participated in pilots and tests of new customer experience processes, providing critical frontline feedback.</li>
+                <li><b>Operational Leadership:</b> Supervised and coached a team of 15 during an office transition, handling escalations and managing performance.</li>
+            </ul>
         </div>
     </div>
 
     <script>
         function openModal(modalId) {
             const modal = document.getElementById(modalId);
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            setTimeout(() => {
-                modal.querySelector('.modal-backdrop').classList.add('opacity-100');
-                modal.querySelector('.modal-content').classList.remove('scale-95');
-                modal.querySelector('.modal-content').classList.add('scale-100');
-            }, 10);
+            modal.classList.remove('opacity-0', 'pointer-events-none', 'scale-95');
+            modal.classList.add('opacity-100', 'scale-100');
+            document.body.style.overflow = 'hidden';
+            modal.addEventListener('click', () => closeModal(modalId), { once: true });
         }
 
         function closeModal(modalId) {
             const modal = document.getElementById(modalId);
-            modal.querySelector('.modal-backdrop').classList.remove('opacity-100');
-            modal.querySelector('.modal-content').classList.remove('scale-100');
-            modal.querySelector('.modal-content').classList.add('scale-95');
+            modal.classList.add('opacity-0', 'scale-95');
             setTimeout(() => {
-                modal.classList.add('hidden');
-                modal.classList.remove('flex');
+                modal.classList.add('pointer-events-none');
             }, 300);
+            document.body.style.overflow = 'auto';
         }
-
-        // Close modal on escape key press
-        window.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                ['modal1', 'modal2', 'modal3'].forEach(id => {
-                    if (!document.getElementById(id).classList.contains('hidden')) {
-                        closeModal(id);
-                    }
-                });
-            }
-        });
     </script>
 </body>
 </html>
+
