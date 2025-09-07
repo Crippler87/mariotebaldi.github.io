@@ -16,9 +16,9 @@
         .scroll-container::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 10px; }
         .scroll-container::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 10px; }
         .scroll-container::-webkit-scrollbar-thumb:hover { background: #64748b; }
-        .skill-card { transition: all 0.2s ease-in-out; }
-        .skill-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
-        .skill-card p { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; }
+        .interactive-card { transition: all 0.2s ease-in-out; }
+        .interactive-card:hover { transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05); }
+        .expandable-card p { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out, margin-top 0.4s ease-in-out; }
     </style>
 </head>
 <body class="text-slate-800">
@@ -151,38 +151,67 @@
         </div>
 
         <!-- Skills Section -->
-        <section class="mb-12">
+        <section class="mb-16">
             <h2 class="text-3xl font-bold text-slate-900 tracking-tight text-center mb-8">Core Product Competencies</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 
-                <div class="skill-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleSkill(this)">
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
                     <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">Product Collaboration <span>+</span></h3>
-                    <p class="text-slate-600 text-sm mt-2 max-h-0 opacity-0 overflow-hidden">Translated operational issues into clear product requirements, acceptance criteria, and UAT plans. Co-prioritized backlogs with Product & Engineering to ensure development addressed the most critical business needs.</p>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Translated operational issues into clear product requirements, acceptance criteria, and UAT plans. Co-prioritized backlogs with Product & Engineering to ensure development addressed the most critical business needs.</p>
                 </div>
                 
-                <div class="skill-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleSkill(this)">
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
                     <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">Stakeholder Management <span>+</span></h3>
-                    <p class="text-slate-600 text-sm mt-2 max-h-0 opacity-0 overflow-hidden">Led cross-functional initiatives involving up to 10 teams across Tech, Finance, Legal, Risk, and Fraud. Delivered regular reporting to senior leadership, aligning diverse stakeholders around shared goals and outcomes.</p>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Led cross-functional initiatives involving up to 10 teams across Tech, Finance, Legal, Risk, and Fraud. Delivered regular reporting to senior leadership, aligning diverse stakeholders around shared goals and outcomes.</p>
                 </div>
 
-                <div class="skill-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleSkill(this)">
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
                     <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">Data Analysis & Problem Solving <span>+</span></h3>
-                    <p class="text-slate-600 text-sm mt-2 max-h-0 opacity-0 overflow-hidden">Used SQL, Hadoop, and Snowflake to analyze large datasets, identify trends, and detect anomalies. Used data insights to design preventative controls, reduce revenue risk, and drive process improvements.</p>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Used SQL, Hadoop, and Snowflake to analyze large datasets, identify trends, and detect anomalies. Used data insights to design preventative controls, reduce revenue risk, and drive process improvements.</p>
                 </div>
 
-                <div class="skill-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleSkill(this)">
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
                     <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">Process Improvement <span>+</span></h3>
-                    <p class="text-slate-600 text-sm mt-2 max-h-0 opacity-0 overflow-hidden">Continuously optimized workflows, saving over 10 hours per week through automation and process redesign. Designed new policy flows and operational processes that improved efficiency and accuracy.</p>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Continuously optimized workflows, saving over 10 hours per week through automation and process redesign. Designed new policy flows and operational processes that improved efficiency and accuracy.</p>
                 </div>
 
-                <div class="skill-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleSkill(this)">
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
                     <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">People Management & Coaching <span>+</span></h3>
-                    <p class="text-slate-600 text-sm mt-2 max-h-0 opacity-0 overflow-hidden">Led and developed teams of analysts, setting clear objectives, running 1:1s, and creating growth plans. Owned the full hiring and onboarding cycle to align team capacity with business and product goals.</p>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Led and developed teams of analysts, setting clear objectives, running 1:1s, and creating growth plans. Owned the full hiring and onboarding cycle to align team capacity with business and product goals.</p>
                 </div>
                 
-                <div class="skill-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleSkill(this)">
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
                     <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">Solution Design & Delivery <span>+</span></h3>
-                    <p class="text-slate-600 text-sm mt-2 max-h-0 opacity-0 overflow-hidden">Designed and delivered a complex, time-sensitive €30M compensation solution in just 3 days. Owned initiatives from concept to launch, ensuring they were compliant, scalable, and met critical business needs.</p>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Designed and delivered a complex, time-sensitive €30M compensation solution in just 3 days. Owned initiatives from concept to launch, ensuring they were compliant, scalable, and met critical business needs.</p>
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold text-slate-900 tracking-tight text-center mb-8">Product Management Certifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
+                    <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">IBM - Product Management Foundation <span>+</span></h3>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Covers the end-to-end product lifecycle, from ideation and market analysis to launch and iteration. Establishes a strong baseline in core PM principles.</p>
+                </div>
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
+                    <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">IBM - Product Strategy & Planning <span>+</span></h3>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Focuses on defining a product's vision, conducting competitive analysis, setting strategic goals, and translating them into an actionable roadmap.</p>
+                </div>
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
+                    <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">IBM - New Product Development & Delivery <span>+</span></h3>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Details the process of taking a product from concept to market, including MVP definition, prototyping, and go-to-market planning.</p>
+                </div>
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
+                    <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">IBM - Agile Development and Scrum <span>+</span></h3>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Provides expertise in iterative development methodologies, running sprints, managing backlogs, and fostering a collaborative, fast-paced team environment.</p>
+                </div>
+                <div class="interactive-card expandable-card bg-white rounded-lg shadow p-5 cursor-pointer" onclick="toggleCard(this)">
+                    <h3 class="text-lg font-bold text-slate-800 flex justify-between items-center">IBM - Product Stakeholder Collaboration <span>+</span></h3>
+                    <p class="text-slate-600 text-sm max-h-0 opacity-0 overflow-hidden">Emphasizes techniques for managing communication, aligning diverse teams (Eng, Design, Sales, Legal), and ensuring buy-in across the organization.</p>
                 </div>
                 
             </div>
@@ -275,17 +304,19 @@
             }
         });
 
-        function toggleSkill(element) {
+        function toggleCard(element) {
             const p = element.querySelector('p');
             const span = element.querySelector('span');
 
             if (p.style.maxHeight && p.style.maxHeight !== '0px') {
                 p.style.maxHeight = '0px';
                 p.style.opacity = '0';
+                p.style.marginTop = '0';
                 span.textContent = '+';
             } else {
                 p.style.maxHeight = p.scrollHeight + 'px';
                 p.style.opacity = '1';
+                p.style.marginTop = '0.5rem';
                 span.textContent = '-';
             }
         }
